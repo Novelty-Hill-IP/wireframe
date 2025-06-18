@@ -16,6 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
 	title: "Wireframe",
 	description: "Wireframe is an internal tool for creating models.",
+	icons: {
+		icon: "/branding/logos/logo-dark.png",
+		shortcut: "/branding/logos/logo-dark.png",
+		apple: "/branding/logos/logo-dark.png",
+	},
 };
 
 export default function RootLayout({
