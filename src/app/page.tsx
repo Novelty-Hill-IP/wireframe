@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import { LoginButton } from "@/components/login-button";
 import {
 	Card,
@@ -7,8 +8,15 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
-export default function LoginPage() {
+export default async function LoginPage() {
+	const session = await auth();
+
+	if (session) {
+		redirect("/dashboard");
+	}
+
 	return (
 		<div className="min-h-screen bg-background flex items-center justify-center p-4">
 			<div className="w-full max-w-md space-y-8">
