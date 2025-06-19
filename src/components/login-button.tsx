@@ -16,7 +16,7 @@ export function LoginButton() {
 			await signIn("microsoft-entra-id", {
 				callbackUrl: "/dashboard",
 			});
-		} catch (error) {
+		} catch {
 			setLoading(false);
 		}
 	};

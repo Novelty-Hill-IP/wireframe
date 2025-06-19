@@ -23,7 +23,7 @@ export default function UserAvatar() {
 		setLoading(true);
 		try {
 			await signOut({ callbackUrl: "/" });
-		} catch (error) {
+		} catch {
 			setLoading(false);
 		}
 	};
