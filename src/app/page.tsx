@@ -1,6 +1,4 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
+import { LoginButton } from "@/components/login-button";
 import {
 	Card,
 	CardContent,
@@ -11,10 +9,6 @@ import {
 import Image from "next/image";
 
 export default function LoginPage() {
-	const handleMicrosoftLogin = () => {
-		console.log("Redirecting to Microsoft login...");
-	};
-
 	return (
 		<div className="min-h-screen bg-background flex items-center justify-center p-4">
 			<div className="w-full max-w-md space-y-8">
@@ -44,18 +38,7 @@ export default function LoginPage() {
 						</CardDescription>
 					</CardHeader>
 					<CardContent>
-						<Button
-							onClick={handleMicrosoftLogin}
-							className="w-full h-11"
-						>
-							<Image
-								src="/icons/microsoft.svg"
-								alt="Microsoft Logo"
-								width={24}
-								height={24}
-							/>
-							Sign in with Microsoft
-						</Button>
+						<LoginButton />
 					</CardContent>
 				</Card>
 			</div>
