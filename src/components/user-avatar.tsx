@@ -31,13 +31,17 @@ export default function UserAvatar() {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<Avatar className="h-8 w-8 cursor-pointer hover:opacity-80 transition-opacity">
+				<Avatar className="h-9 w-9 cursor-pointer hover:opacity-80 transition-opacity">
 					<AvatarImage
 						src={session?.data?.user?.image || ""}
 						alt={session?.data?.user?.name || ""}
 					/>
-					<AvatarFallback className="font-bold">
-						{session?.data?.user?.name?.[0]?.toUpperCase() || "U"}
+					<AvatarFallback className="font-bold tracking-wider">
+						{session?.data?.user?.name
+							?.split(" ")
+							?.map((name) => name[0])
+							?.join("")
+							?.toUpperCase() || "U"}
 					</AvatarFallback>
 				</Avatar>
 			</DropdownMenuTrigger>
